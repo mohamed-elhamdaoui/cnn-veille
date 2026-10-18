@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Veille CNN — Comprendre la classification d'images et application au projet BrainScan. Présentation interactive pour étudiants."/>
+  <meta name="theme-color" content="#020617"/>
+  <title>Veille CNN | BrainScan — Classification d'images par Deep Learning</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════
+     VIEWPORT — letterboxes the 1920×1080 stage in any screen
+     ══════════════════════════════════════════════════════════════ -->
+<div id="viewport" role="main">
+<div id="stage" role="document" aria-label="Présentation CNN BrainScan">
+
+  <!-- ── TOP NAVIGATION BAR ────────────────────────────────────── -->
+  <nav id="top-bar" aria-label="Barre de navigation">
+
+    <!-- Slide counter -->
+    <div id="slide-counter" aria-live="polite" aria-label="Numéro de diapositive">
+      01 / 25
+    </div>
+
+    <!-- Current slide title -->
+    <div id="slide-title-bar" aria-live="polite"></div>
+
+    <!-- Controls -->
+    <div id="top-controls">
+      <!-- Notes & Explications toggle -->
+      <button class="top-btn" id="btn-notes"
+              aria-label="Ouvrir les notes et explications (touche S)"
+              title="Notes & Explications — touche S">
+        💡 Explications (S)
+      </button>
+
+      <!-- Overview -->
+      <button class="top-btn" id="btn-overview"
+              aria-label="Vue d'ensemble des diapositives (touche O)"
+              title="Vue d'ensemble — touche O">
+        ⊞ Plan (O)
+      </button>
+
+      <!-- Fullscreen -->
+      <button class="top-btn" id="btn-fullscreen"
+              aria-label="Plein écran (touche F)"
+              title="Plein écran — touche F">
+        ⛶ (F)
+      </button>
+
+      <!-- Prev / Next -->
+      <button class="top-btn" id="btn-prev"
+              aria-label="Diapositive précédente (touche ←)"
+              title="Précédente">
+        ◀
+      </button>
+      <button class="top-btn" id="btn-next"
+              aria-label="Diapositive suivante (touche → ou Espace)"
+              title="Suivante">
+        ▶
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── SLIDE PANEL ────────────────────────────────────────────── -->
+  <div id="slide-panel" role="region" aria-label="Contenu de la diapositive">
+    <!-- Slides are injected here by app.js -->
+  </div>
+
+  <!-- ── BOTTOM: PROGRESS BAR + DOTS ──────────────────────────── -->
+  <div id="bottom-bar" role="navigation" aria-label="Navigation par points">
+    <div id="progress-track" role="progressbar"
+         aria-valuemin="1" aria-valuemax="25" aria-valuenow="1"
+         aria-label="Progression de la présentation">
+      <div id="progress-fill"></div>
+    </div>
+    <div id="dots-container" aria-label="Points de navigation">
+      <!-- Dots built by app.js -->
+    </div>
+  </div>
+
+  <!-- ── NOTES & EXPLICATIONS DRAWER ────────────────────────── -->
+  <aside id="notes-drawer"
+         role="complementary"
+         aria-label="Notes et explications complémentaires"
+         aria-hidden="true">
+    <div id="notes-header">
+      <div id="notes-label">💡 Notes & Explications</div>
+      <button id="notes-close" aria-label="Fermer le volet">✕</button>
+    </div>
+    <div id="notes-body" dir="ltr" lang="fr" aria-live="polite">
+      <!-- Notes injected by app.js on each slide change -->
+    </div>
+  </aside>
+
+  <!-- ── OVERVIEW GRID OVERLAY ─────────────────────────────────── -->
+  <div id="overview-overlay"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Vue d'ensemble de toutes les diapositives">
+    <div id="overview-title">Plan de la présentation</div>
+    <div id="overview-grid" role="list">
+      <!-- Thumbnails built by app.js -->
+    </div>
+  </div>
+
+</div><!-- #stage -->
+</div><!-- #viewport -->
+
+<!-- ══════════════════════════════════════════════════════════════
+     NOSCRIPT FALLBACK
+     ══════════════════════════════════════════════════════════════ -->
+<noscript>
+  <style>
+    body { display: flex; align-items: center; justify-content: center;
+           height: 100vh; background: #020617; color: #f1f5f9;
+           font-family: sans-serif; text-align: center; padding: 40px; }
+  </style>
+  <div>
+    <h1 style="font-size:2rem; margin-bottom:16px;">JavaScript requis</h1>
+    <p>Cette présentation interactive nécessite JavaScript. Veuillez l'activer dans votre navigateur.</p>
+  </div>
+</noscript>
+
+<script src="app.js"></script>
+</body>
+</html>
